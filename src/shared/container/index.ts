@@ -13,10 +13,15 @@ import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepo
 import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
 import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 
+import ICarsRepository from '@modules/cars/repositories/ICarsRepository';
+import CarsRepository from '@modules/cars/infra/typeorm/repositories/CarsRepository';
+
 /* container.registerSingleton<IProjectsRepository>(
   'ProjectsRepository',
   ProjectsRepository,
 ); */
+
+container.registerSingleton<ICarsRepository>('CarsRepository', CarsRepository);
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',

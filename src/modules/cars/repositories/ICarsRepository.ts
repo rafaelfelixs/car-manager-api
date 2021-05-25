@@ -11,5 +11,6 @@ export default interface ICarsRepository {
   findAllCarsByBrand(data: IFindAllCarsByBrandDTO): Promise<Car[]>;
   findAllCarsByYear(data: IFindAllCarsByYearDTO): Promise<Car[]>;
   findById(id: string): Promise<Car | undefined>;
-  // deleteById(id: string): Promise<Car>;
+  readAll(): Promise<Car[] | undefined>;
+  deleteById(id: string): Promise<Car[] | undefined>;
 }

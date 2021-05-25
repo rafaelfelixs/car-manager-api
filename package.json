@@ -12,15 +12,16 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "celebrate": "^14.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
-    "pg": "^8.6.0",
+    "pg": "^8.3.3",
     "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.5.0",
-    "typeorm": "^0.2.32",
+    "tsyringe": "^4.4.0",
+    "typeorm": "^0.2.27",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

@@ -12,6 +12,10 @@ carsRouter.post('/', carsController.create);
 
 carsRouter.get('/', carsController.read);
 
+carsRouter.get('/all', carsController.readAll);
+
 carsRouter.put('/', carsController.update);
+
+carsRouter.delete('/', carsController.delete);
 
 export default carsRouter;

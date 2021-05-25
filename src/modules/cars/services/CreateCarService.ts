@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
@@ -31,7 +32,7 @@ class CreateCarService {
     gas_capacity,
     color,
   }: IRequest): Promise<Car> {
-    if (model || brand || price || year) {
+    if (!model || !brand || !price || !year) {
       throw new AppError('Missing properties to create a car, try again.');
     }
 

@@ -6,26 +6,22 @@ import AppError from '@shared/errors/AppError';
 import Car from '../infra/typeorm/entities/Car';
 import ICarsRepository from '../repositories/ICarsRepository';
 
-interface IRequest {
-  car_id: string;
-}
-
 @injectable()
-class DeleteCarService {
+class ListAllCars {
   constructor(
     @inject('CarsRepository')
     private carsRepository: ICarsRepository,
   ) {}
 
-  public async execute({ car_id }: IRequest): Promise<Car[] | undefined> {
-    const car = this.carsRepository.deleteById(car_id);
+  public async execute(): Promise<Car[] | undefined> {
+    const cars = this.carsRepository.readAll();
 
-    if (!car) {
-      throw new AppError('Car not found');
+    if (!cars) {
+      throw new AppError('There is not any car');
     }
 
-    return car;
+    return cars;
   }
 }
 
-export default DeleteCarService;
+export default ListAllCars;

@@ -17,6 +17,7 @@ export default function ensureAuthenticated(
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
+    console.log('Teste 1');
     throw new AppError('JWT token is missing', 401);
   }
 
@@ -30,8 +31,6 @@ export default function ensureAuthenticated(
     request.user = {
       id: sub,
     };
-
-    // console.log(decoded);
 
     return next();
   } catch (err) {

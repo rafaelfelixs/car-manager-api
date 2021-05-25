@@ -79,9 +79,22 @@ class CarsRepository implements ICarsRepository {
     return this.ormRepository.save(car);
   }
 
-  /* public async deleteById(id: string): Promise<Car> {
-    return this.ormRepository.delete({ id });
-  } */
+  public async readAll(): Promise<Car[] | undefined> {
+    return this.ormRepository.createQueryBuilder('cars').getRawMany();
+  }
+
+  public async deleteById(id: string): Promise<Car[] | undefined> {
+    /* const car = this.ormRepository.findOne({
+      where: { id },
+    }); */
+
+    await this.ormRepository
+      .createQueryBuilder()
+      .where('id = :id', { id })
+      .execute();
+
+    return this.ormRepository.createQueryBuilder('cars').getRawMany();
+  }
 }
 
 export default CarsRepository;

@@ -32,14 +32,17 @@ export default class CreateCars1621478979152 implements MigrationInterface {
           {
             name: 'country',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'gas_capacity',
             type: 'int',
+            isNullable: true,
           },
           {
             name: 'color',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'picture',
@@ -49,6 +52,7 @@ export default class CreateCars1621478979152 implements MigrationInterface {
           {
             name: 'purchase_date',
             type: 'timestamp with time zone',
+            isNullable: true,
           },
           {
             name: 'owner_id',
